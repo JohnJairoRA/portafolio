@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --color-primario: #1E3A8A; /* Azul Marino */
+    --color-secundario: #FFFFFF; /* Blanco */
+    --color-terciario: #22D4FD; /* Cian */
+    --color-hover: #272727; /* Gris Oscuro */
+
+    --fuente-krona: 'Krona One', sans-serif;
+    --fuente-montserrat: 'Montserrat', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.header {
+    padding: 2% 0% 0% 15%;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.header__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.header__menu__link {
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-terciario);
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.header__menu__link:hover {
+    color: var(--color-hover);
+    text-shadow: 0 0 8px var(--color-terciario);
+}
+
+.presentacion {
+    padding: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: slideInRight 1s ease-in-out;
+}
+
+.presentacion__contenido {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.presentacion__contenido__titulo {
+    font-size: 2rem;
+    font-family: var(--fuente-krona);
+    animation: blink 1.5s infinite;
+}
+
+.titulo-destaque {
+    color: var(--color-terciario);
+}
+
+.presentacion__contenido__texto {
+    font-size: 1.5rem;
+    font-family: var(--fuente-montserrat);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.presentacion__enlaces {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.presentacion__enlaces__subtitulo {
+    font-family: var(--fuente-krona);
+    font-weight: 400;
+    font-size: 1.5rem;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.presentacion__enlaces__link {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid var(--color-terciario);
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 21.5px 0;
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-family: var(--fuente-montserrat);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.presentacion__enlaces__link:hover {
+    background-color: var(--color-hover);
+    box-shadow: 0 0 15px var(--color-terciario);
+}
+
+.presentacion__imagen {
+    width: 50%;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.presentacion__botones__imagenes {
+    display: flex;
+    gap: 20px; /* Espacio entre las imágenes */
+    justify-content: center; /* Centrar las imágenes horizontalmente */
+}
+
+.presentacion__botones__imagenes img {
+    width: 100px; /* Ajusta el tamaño de las imágenes */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: circular-motion 8s infinite linear;
+}
+
+.presentacion__botones__imagenes img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--color-terciario);
+}
+
+.certificaciones {
+    padding: 5% 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.certificaciones__titulo {
+    font-size: 2.5rem;
+    font-family: var(--fuente-krona);
+    color: var(--color-terciario);
+    margin-bottom: 40px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+
+.btn-home, .btn-navegacion {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-family: var(--fuente-montserrat);
+    color: var(--color-secundario);
+    background-color: var(--color-terciario);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-home:hover, .btn-navegacion:hover {
+    background-color: var(--color-hover);
+    transform: scale(1.05);
+}
+
+.carousel {
+    width: 100%;
+    height: 100vh; /* Ajusta la altura para que ocupe toda la pantalla */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-inner {
+    display: flex;
+    width: 100%;
+    animation: slide 40s infinite;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100vh; /* Ajusta la altura para que ocupe toda la pantalla */
+    object-fit: cover; /* Asegura que la imagen cubra todo el área sin distorsión */
+    flex: 1;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    14.28% { transform: translateX(0%); }
+    28.56% { transform: translateX(-100%); }
+    42.84% { transform: translateX(-200%); }
+    57.12% { transform: translateX(-300%); }
+    71.40% { transform: translateX(-400%); }
+    85.68% { transform: translateX(-500%); }
+    100% { transform: translateX(-600%); }
+}
+
+@keyframes circular-motion {
+    0% {
+        transform: rotate(0deg) translateX(50px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(50px) rotate(-360deg);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.footer {
+    color: var(--color-primario);
+    background-color: var(--color-terciario);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@media (max-width: 1200px) {
+    .header {
+        padding: 10%;
+    }
+    .header__menu {
+        justify-content: center;
+    }
+    .presentacion {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+    .presentacion__contenido {
+        width: auto;
+    }
+}
